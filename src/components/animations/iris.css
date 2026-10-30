@@ -1,0 +1,38 @@
+.iris {
+  position: relative;
+  height: 150svh;
+  z-index: 2;
+}
+.iris--creme {
+  background: var(--creme);
+}
+.iris__sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+.iris__disc {
+  --r: 0%;
+  --ox: 50%;
+  --oy: 50%;
+  position: absolute;
+  inset: 0;
+  clip-path: circle(var(--r) at var(--ox) var(--oy));
+}
+.iris__disc--jaune {
+  background: var(--jaune);
+}
+.iris__disc--orange {
+  background: var(--orange);
+}
+.iris__disc--violet {
+  background: var(--violet);
+}
+
+/* en mouvement réduit, pas de disque qui s'ouvre : la couleur passe par le bord dégradé de la scène suivante */
+@media (prefers-reduced-motion: reduce) {
+  .iris {
+    display: none;
+  }
+}

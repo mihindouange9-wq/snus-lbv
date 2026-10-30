@@ -1,0 +1,54 @@
+.lights {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--nuit);
+}
+
+.lights__inner {
+  position: absolute;
+  inset: 0;
+}
+
+/* positions de départ = conduite « hero » (Lights.tsx, CUES.hero) ; centrage par marges pour laisser transform à GSAP */
+.gel {
+  position: absolute;
+  width: 92vmax;
+  height: 92vmax;
+  margin: -46vmax 0 0 -46vmax;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.gel--orange {
+  left: 22%;
+  top: 30%;
+  transform: scale(1.35);
+  opacity: 0.95;
+  background: radial-gradient(circle at center, rgba(255, 90, 31, 0.78) 0%, rgba(255, 90, 31, 0.32) 28%, rgba(255, 90, 31, 0) 62%);
+}
+.gel--jaune {
+  left: 84%;
+  top: 22%;
+  transform: scale(0.75);
+  opacity: 0.7;
+  background: radial-gradient(circle at center, rgba(248, 255, 50, 0.6) 0%, rgba(248, 255, 50, 0.22) 28%, rgba(248, 255, 50, 0) 60%);
+}
+.gel--violet {
+  left: 72%;
+  top: 96%;
+  transform: scale(1.15);
+  opacity: 0.85;
+  background: radial-gradient(circle at center, rgba(121, 40, 255, 0.85) 0%, rgba(121, 40, 255, 0.36) 30%, rgba(121, 40, 255, 0) 64%);
+}
+
+@media (max-width: 760px) {
+  .gel {
+    width: 130vmax;
+    height: 130vmax;
+    margin: -65vmax 0 0 -65vmax;
+  }
+}

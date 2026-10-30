@@ -1,0 +1,368 @@
+/* Metal Mania (titres de scène, pointes en lames), Shrikhand (noms de goût), Black Han Sans (mot-symbole, chiffres) :
+   SIL OFL 1.1, sous-ensembles produits par tools/subset-font.mjs */
+@font-face {
+  font-family: "Metal Mania";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/metal-mania-subset.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Shrikhand";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/shrikhand-subset.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Black Han Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/black-han-sans-subset.woff2") format("woff2");
+}
+
+/* Polices de repli aux métriques ajustées : le texte garde presque la même place avant l'arrivée des vraies polices
+   (largeurs mesurées en capitales : Shrikhand par rapport à Impact, Arial Black et Roboto Bold ; Bricolage ≈ 105 % d'Arial) */
+/* Metal Mania ≈ 105 % d'Impact, 68 % d'Arial Black, 75 % de Roboto Bold (largeurs mesurées en capitales) */
+@font-face {
+  font-family: "Titre Repli Impact";
+  src: local("Impact");
+  size-adjust: 105%;
+  ascent-override: 88%;
+  descent-override: 36%;
+}
+@font-face {
+  font-family: "Titre Repli Arial Black";
+  src: local("Arial Black");
+  size-adjust: 68%;
+  ascent-override: 88%;
+  descent-override: 36%;
+}
+@font-face {
+  font-family: "Titre Repli Roboto";
+  src: local("Roboto Bold"), local("Roboto-Bold");
+  size-adjust: 75%;
+  ascent-override: 88%;
+  descent-override: 36%;
+}
+@font-face {
+  font-family: "Nom Repli Impact";
+  src: local("Impact");
+  size-adjust: 144%;
+  ascent-override: 102%;
+  descent-override: 44%;
+}
+@font-face {
+  font-family: "Nom Repli Arial Black";
+  src: local("Arial Black");
+  size-adjust: 93%;
+  ascent-override: 102%;
+  descent-override: 44%;
+}
+@font-face {
+  font-family: "Nom Repli Roboto";
+  src: local("Roboto Bold"), local("Roboto-Bold");
+  size-adjust: 103%;
+  ascent-override: 102%;
+  descent-override: 44%;
+}
+@font-face {
+  font-family: "Logo Repli Arial Black";
+  src: local("Arial Black");
+  size-adjust: 89%;
+}
+@font-face {
+  font-family: "Logo Repli Roboto";
+  src: local("Roboto Black"), local("Roboto-Black"), local("Roboto Bold"), local("Roboto-Bold");
+  size-adjust: 96%;
+}
+@font-face {
+  font-family: "Bricolage Repli Arial";
+  src: local("Arial");
+  size-adjust: 105%;
+}
+@font-face {
+  font-family: "Bricolage Repli Roboto";
+  src: local("Roboto");
+  size-adjust: 105%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--violet) var(--nuit);
+}
+
+body {
+  margin: 0;
+  background: var(--nuit);
+  color: var(--papier);
+  font-family: var(--f-text);
+  font-size: var(--t-body);
+  font-weight: 450;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  caret-color: var(--jaune);
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--jaune);
+  color: var(--nuit);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--nuit);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--violet);
+  border-radius: 999px;
+  border: 2px solid var(--nuit);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.scene {
+  position: relative;
+}
+
+/* Titres de scène : Protest Revolution, capitales, lames */
+.title {
+  font-family: var(--f-display);
+  font-size: var(--t-display);
+  line-height: 0.96;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.title--h3 {
+  font-size: var(--t-h3);
+  line-height: 1;
+}
+
+/* Étiquettes condensées : prix, références, mg/g */
+.label {
+  font-family: var(--f-text);
+  font-stretch: 75%;
+  font-weight: 700;
+  font-size: var(--t-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* chiffres du mot-symbole : prix, doses, compteurs en Black Han Sans */
+.label--big {
+  font-family: var(--f-logo);
+  font-stretch: normal;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 1.2rem + 2.4vw, 3.25rem);
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+  font-variant-numeric: tabular-nums;
+}
+
+.lead {
+  font-size: var(--t-lead);
+  line-height: 1.4;
+  font-weight: 450;
+  text-wrap: pretty;
+}
+
+/* note latérale entre parenthèses */
+.aside {
+  font-size: var(--t-small);
+  letter-spacing: 0.02em;
+  opacity: 0.78;
+}
+
+/* Boutons pilules */
+.pill {
+  --pill-bg: var(--jaune);
+  --pill-fg: var(--nuit);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55em;
+  min-height: 52px;
+  padding: 0 1.45rem;
+  border-radius: 999px;
+  background: var(--pill-bg);
+  color: var(--pill-fg);
+  font-weight: 650;
+  font-size: 1rem;
+  line-height: 1;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+  transition:
+    transform 0.25s var(--ease-out),
+    background-color 0.25s,
+    color 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+.pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -12px rgba(248, 255, 50, 0.6);
+}
+.pill:active {
+  transform: translateY(0) scale(0.985);
+}
+.pill svg {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+}
+.pill--ghost {
+  --pill-bg: transparent;
+  --pill-fg: currentColor;
+  border-color: currentColor;
+}
+.pill--ghost:hover {
+  box-shadow: none;
+  background: rgba(244, 239, 230, 0.08);
+}
+.pill--nuit {
+  --pill-bg: var(--nuit);
+  --pill-fg: var(--creme);
+}
+.pill--nuit:hover {
+  box-shadow: 0 10px 24px -12px rgba(11, 10, 16, 0.7);
+}
+.pill--small {
+  min-height: 46px;
+  padding: 0 1.1rem;
+  font-size: 0.9375rem;
+}
+.pill[aria-pressed="true"] {
+  --pill-bg: var(--jaune);
+  --pill-fg: var(--nuit);
+  border-color: var(--jaune);
+}
+.pill:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Étincelle à quatre branches (motif SPICY DOLLZ) */
+.sparkle {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  flex: none;
+}
+
+/* visiteur déjà passé par le contrôle d'âge : pas d'éclair du voile avant l'hydratation */
+html[data-adulte] .gate {
+  display: none;
+}
+
+/* l'entrée du hero : les lettres attendent GSAP, les boîtes partent de leur état initial sans disparaître
+   (elles restent peintes dès le premier rendu), uniquement quand le mouvement est permis */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .hero__mark .wm__g {
+    opacity: 0;
+  }
+  /* la boîte principale se pose (elle ne grandit jamais : sa première peinture reste la plus grande, LCP tôt) */
+  html.js .hero__can--main {
+    transform: translateY(70px) scale(1.06);
+  }
+  html.js .hero__can--left,
+  html.js .hero__can--back {
+    transform: translateY(50px) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .pill,
+  .pill:hover {
+    transition: none;
+    transform: none;
+  }
+}

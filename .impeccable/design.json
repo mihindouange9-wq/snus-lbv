@@ -1,0 +1,604 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-31T00:30:00+01:00",
+  "title": "Design System: SNUS LBV",
+  "extensions": {
+    "colorMeta": {
+      "nuit": {
+        "role": "neutral",
+        "displayName": "Nuit",
+        "canonical": "#0b0a10",
+        "tonalRamp": [
+          "oklch(15% 0.012 290)",
+          "oklch(25% 0.012 290)",
+          "oklch(37% 0.012 290)",
+          "oklch(49% 0.012 290)",
+          "oklch(61% 0.012 290)",
+          "oklch(73% 0.012 290)",
+          "oklch(85% 0.012 290)",
+          "oklch(95% 0.012 290)"
+        ]
+      },
+      "nuit-2": {
+        "role": "neutral",
+        "displayName": "Nuit 2 (surface relevée)",
+        "canonical": "#14121c",
+        "tonalRamp": [
+          "oklch(15% 0.016 290)",
+          "oklch(25% 0.016 290)",
+          "oklch(37% 0.016 290)",
+          "oklch(49% 0.016 290)",
+          "oklch(61% 0.016 290)",
+          "oklch(73% 0.016 290)",
+          "oklch(85% 0.016 290)",
+          "oklch(95% 0.016 290)"
+        ]
+      },
+      "creme": {
+        "role": "neutral",
+        "displayName": "Crème",
+        "canonical": "#f4efe6",
+        "tonalRamp": [
+          "oklch(15% 0.014 85)",
+          "oklch(25% 0.014 85)",
+          "oklch(37% 0.014 85)",
+          "oklch(49% 0.014 85)",
+          "oklch(61% 0.014 85)",
+          "oklch(73% 0.014 85)",
+          "oklch(85% 0.014 85)",
+          "oklch(95% 0.014 85)"
+        ]
+      },
+      "creme-2": {
+        "role": "neutral",
+        "displayName": "Crème 2",
+        "canonical": "#e8e1d2",
+        "tonalRamp": [
+          "oklch(15% 0.02 85)",
+          "oklch(25% 0.02 85)",
+          "oklch(37% 0.02 85)",
+          "oklch(49% 0.02 85)",
+          "oklch(61% 0.02 85)",
+          "oklch(73% 0.02 85)",
+          "oklch(85% 0.02 85)",
+          "oklch(95% 0.02 85)"
+        ]
+      },
+      "orange": {
+        "role": "primary",
+        "displayName": "Orange gel",
+        "canonical": "#ff5a1f",
+        "tonalRamp": [
+          "oklch(15% 0.08 40)",
+          "oklch(25% 0.12 40)",
+          "oklch(37% 0.16 40)",
+          "oklch(49% 0.2 40)",
+          "oklch(61% 0.22 40)",
+          "oklch(69% 0.21 40)",
+          "oklch(85% 0.1 40)",
+          "oklch(95% 0.03 40)"
+        ]
+      },
+      "jaune": {
+        "role": "primary",
+        "displayName": "Jaune gel",
+        "canonical": "#f8ff32",
+        "tonalRamp": [
+          "oklch(15% 0.04 108)",
+          "oklch(25% 0.07 108)",
+          "oklch(37% 0.1 108)",
+          "oklch(49% 0.13 108)",
+          "oklch(61% 0.16 108)",
+          "oklch(73% 0.19 108)",
+          "oklch(85% 0.21 108)",
+          "oklch(96% 0.2 108)"
+        ]
+      },
+      "violet": {
+        "role": "primary",
+        "displayName": "Violet gel",
+        "canonical": "#7928ff",
+        "tonalRamp": [
+          "oklch(15% 0.1 295)",
+          "oklch(25% 0.16 295)",
+          "oklch(37% 0.22 295)",
+          "oklch(49% 0.28 295)",
+          "oklch(61% 0.24 295)",
+          "oklch(73% 0.17 295)",
+          "oklch(85% 0.09 295)",
+          "oklch(95% 0.03 295)"
+        ]
+      },
+      "encre-doux": {
+        "role": "neutral",
+        "displayName": "Encre douce (texte secondaire sur crème)",
+        "canonical": "rgba(11, 10, 16, 0.7)"
+      },
+      "papier-doux": {
+        "role": "neutral",
+        "displayName": "Papier doux (texte secondaire sur nuit)",
+        "canonical": "rgba(244, 239, 230, 0.72)"
+      },
+      "filet-sombre": {
+        "role": "neutral",
+        "displayName": "Filet sombre (bordures sur nuit)",
+        "canonical": "rgba(244, 239, 230, 0.18)"
+      },
+      "filet-clair": {
+        "role": "neutral",
+        "displayName": "Filet clair (séparateurs sur crème)",
+        "canonical": "rgba(11, 10, 16, 0.16)"
+      }
+    },
+    "gradients": [
+      {
+        "name": "mix-ambre",
+        "value": "linear-gradient(160deg in oklch shorter hue, var(--orange), var(--jaune))",
+        "purpose": "Orange vers jaune, chemin court."
+      },
+      {
+        "name": "mix-cerise",
+        "value": "linear-gradient(160deg in oklch shorter hue, var(--orange), var(--violet))",
+        "purpose": "Orange vers violet, chemin court (passe par le magenta)."
+      },
+      {
+        "name": "mix-givre",
+        "value": "linear-gradient(170deg in oklch longer hue, var(--violet), var(--jaune))",
+        "purpose": "Violet vers jaune, chemin long (passe par le cyan et le vert)."
+      },
+      {
+        "name": "mix-trio",
+        "value": "linear-gradient(150deg in oklch longer hue, var(--orange), var(--jaune), var(--violet))",
+        "purpose": "Les trois gels ensemble."
+      },
+      {
+        "name": "pool-per-flavor",
+        "value": "linear-gradient(<angle>deg in oklch <shorter|longer> hue, <gel a>, <gel b>)",
+        "purpose": "Flaque de lumière propre à chaque goût ; couple et angle définis dans src/data/products.ts (light.a, light.b, light.hue, light.angle)."
+      },
+      {
+        "name": "gel-orange",
+        "value": "radial-gradient(circle at center, rgba(255,90,31,0.78) 0%, rgba(255,90,31,0.32) 28%, rgba(255,90,31,0) 62%)",
+        "purpose": "Projecteur orange, mix-blend-mode screen."
+      },
+      {
+        "name": "gel-jaune",
+        "value": "radial-gradient(circle at center, rgba(248,255,50,0.6) 0%, rgba(248,255,50,0.22) 28%, rgba(248,255,50,0) 60%)",
+        "purpose": "Projecteur jaune, mix-blend-mode screen."
+      },
+      {
+        "name": "gel-violet",
+        "value": "radial-gradient(circle at center, rgba(121,40,255,0.85) 0%, rgba(121,40,255,0.36) 30%, rgba(121,40,255,0) 64%)",
+        "purpose": "Projecteur violet, mix-blend-mode screen."
+      },
+      {
+        "name": "wordmark-live",
+        "value": "linearGradient reflect : #9B4DFF 0, orange 0.12, jaune 0.34, orange 0.52, violet 0.7, orange 0.84, jaune 1 ; point chaud radial jaune 0.95 → orange 0.55 → violet 0, screen",
+        "purpose": "Matière vivante du mot-symbole dans le hero."
+      }
+    ],
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display (titre de scène)",
+        "purpose": "Metal Mania en capitales, révélé par masque typographique."
+      },
+      "headline": {
+        "displayName": "Headline (titre de champ)",
+        "purpose": "Titres des champs orange et violet."
+      },
+      "title": {
+        "displayName": "Title (nom de boîte)",
+        "purpose": "Nom des goûts, onglets, étapes, liens du pied de page."
+      },
+      "numeral": {
+        "displayName": "Numeral (chiffres Black Han Sans)",
+        "purpose": "Prix en jaune, doses mg/g, compteur, numéros d'étape, 18+."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Phrase d'accroche et introductions."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texte courant Bricolage 450."
+      },
+      "label": {
+        "displayName": "Label (donnée condensée)",
+        "purpose": "Marque, dose, référence, compteur ; jamais un sur-titre."
+      },
+      "aside": {
+        "displayName": "Aside (note entre parenthèses)",
+        "purpose": "Note latérale d'un titre, mention 18+."
+      }
+    },
+    "fonts": [
+      {
+        "family": "Metal Mania",
+        "file": "src/assets/fonts/metal-mania-subset.woff2",
+        "weights": [
+          400
+        ],
+        "fallbacks": {
+          "Titre Repli Impact": {
+            "local": "Impact",
+            "sizeAdjust": "105%"
+          },
+          "Titre Repli Arial Black": {
+            "local": "Arial Black",
+            "sizeAdjust": "68%"
+          },
+          "Titre Repli Roboto": {
+            "local": "Roboto Bold",
+            "sizeAdjust": "75%"
+          }
+        },
+        "overrides": "ascent 102%, descent 44%",
+        "role": "titres de scène (display, headline)"
+      },
+      {
+        "family": "Shrikhand",
+        "file": "src/assets/fonts/shrikhand-subset.woff2",
+        "weights": [
+          400
+        ],
+        "fallbacks": {
+          "Titre Repli Impact": "size-adjust 144%",
+          "Titre Repli Arial Black": "size-adjust 93%",
+          "Titre Repli Roboto": "size-adjust 103%"
+        },
+        "overrides": "ascent 102%, descent 44%"
+      },
+      {
+        "family": "Black Han Sans",
+        "file": "src/assets/fonts/black-han-sans-subset.woff2",
+        "weights": [
+          400
+        ],
+        "fallbacks": {
+          "Logo Repli Arial Black": "size-adjust 89%",
+          "Logo Repli Roboto": "size-adjust 96%"
+        }
+      },
+      {
+        "family": "Bricolage Grotesque Variable",
+        "axes": [
+          "wght",
+          "wdth"
+        ],
+        "fallbacks": {
+          "Bricolage Repli Arial": "size-adjust 105%",
+          "Bricolage Repli Roboto": "size-adjust 105%"
+        }
+      }
+    ],
+    "shadows": [
+      {
+        "name": "shadow-can",
+        "value": "0 28px 48px -18px rgba(0,0,0,0.7), 0 10px 18px -8px rgba(0,0,0,0.5)",
+        "purpose": "Jeton d'ombre de boîte."
+      },
+      {
+        "name": "can-hero",
+        "value": "filter: drop-shadow(0 30px 30px rgba(0,0,0,0.45))",
+        "purpose": "Boîtes du hero."
+      },
+      {
+        "name": "can-stage",
+        "value": "filter: drop-shadow(0 34px 34px rgba(0,0,0,0.5))",
+        "purpose": "Boîte de la scène des goûts."
+      },
+      {
+        "name": "can-order",
+        "value": "filter: drop-shadow(0 16px 16px rgba(0,0,0,0.45))",
+        "purpose": "Boîte de l'étape 1."
+      },
+      {
+        "name": "can-floor",
+        "value": "radial-gradient(ellipse at center, rgba(0,0,0,0.6), rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 72%) ; scaleY(0.6)",
+        "purpose": "Ellipse au sol sous chaque boîte."
+      },
+      {
+        "name": "wordmark-shadow",
+        "value": "SVG : dx 6, dy 10, feGaussianBlur 7, #000 à 0.5",
+        "purpose": "Ombre douce sous chaque lettre inclinée du mot-symbole."
+      },
+      {
+        "name": "pill-glow",
+        "value": "0 10px 24px -12px rgba(248,255,50,0.6)",
+        "purpose": "Survol de la pilule jaune."
+      },
+      {
+        "name": "pill-nuit-glow",
+        "value": "0 10px 24px -12px rgba(11,10,16,0.7)",
+        "purpose": "Survol de la pilule nuit."
+      },
+      {
+        "name": "dock",
+        "value": "0 18px 40px -16px rgba(0,0,0,0.8)",
+        "purpose": "Dock de commande mobile."
+      },
+      {
+        "name": "nav-line",
+        "value": "0 1px 0 var(--filet-sombre)",
+        "purpose": "Barre de navigation compacte."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Transitions d'état (pilules, onglets, dock, boîte au survol)."
+      },
+      {
+        "name": "ease-io",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "Iris du menu mobile (0.75 s)."
+      },
+      {
+        "name": "reveal-title",
+        "value": "clip-path inset(0 0 100% 0) → inset(0 0 -10% 0), y 40 → 0, 1.3s expo.out",
+        "purpose": "Titres de scène, une seule fois."
+      },
+      {
+        "name": "reveal-block",
+        "value": "autoAlpha 0 → 1, y 30 → 0, 1.15s expo.out",
+        "purpose": "Tout élément data-reveal ; délai = valeur de l'attribut."
+      },
+      {
+        "name": "reveal-safety",
+        "value": "ScrollTrigger top 90% + IntersectionObserver 0.02 + filet à 6000 ms",
+        "purpose": "Rien ne reste masqué."
+      },
+      {
+        "name": "gels-cue",
+        "value": "left/top/scale/opacity, 1.8s power2.inOut, overwrite auto",
+        "purpose": "Changement de conduite lumière par scène (top 55% → bottom 45%)."
+      },
+      {
+        "name": "gels-drift",
+        "value": "xPercent ±5, yPercent ±4, 9 / 11.5 / 14 s, sine.inOut, yoyo infini",
+        "purpose": "Dérive permanente des projecteurs."
+      },
+      {
+        "name": "gels-pointer",
+        "value": "quickTo x (±35px) y (±25px), 1.2s power3.out ; --px/--py",
+        "purpose": "Sillage du pointeur, pointeur fin seulement."
+      },
+      {
+        "name": "iris-scrub",
+        "value": "--r 0% → 120%, ease none, scrub 0.6, top 85% → bottom bottom",
+        "purpose": "Iris de scène au défilement."
+      },
+      {
+        "name": "hero-enter",
+        "value": "lettres y 70 → 0, 1.3s, stagger 0.055 ; boîte principale y 70 scale 1.06 → 0/1, 1.6s ; secondaires 1.4s stagger 0.12 ; expo.out",
+        "purpose": "Entrée du hero (texte déjà peint)."
+      },
+      {
+        "name": "hero-exit",
+        "value": "scrub 0.8 : mot-symbole yPercent -18 scale 0.96 opacité 0.35 ; boîtes y -160/-60/-220 ; texte y -40 opacité 0.2",
+        "purpose": "Le hero s'efface sans disparaître."
+      },
+      {
+        "name": "wordmark-live",
+        "value": "nappe x1/x2 glissent de 1.2 × portée en 16–18 s ; point chaud cx 11–12.5 s, cy 7–8 s, r 9–11 s ; sine.inOut yoyo",
+        "purpose": "Matière vivante du mot-symbole."
+      },
+      {
+        "name": "can-spin",
+        "value": "30 à 38 s par tour (hero 34/36/38, collection 30+(i%3)×3, goûts 36, commande 30), 30 ips sur mobile ou < 260 px",
+        "purpose": "Rotation lente continue des boîtes."
+      },
+      {
+        "name": "can-inertia",
+        "value": "vel *= 0.9^(dt/16) ; ralentissement au survol ; touch-action pan-y",
+        "purpose": "Glissement avec inertie sur les boîtes interactives."
+      },
+      {
+        "name": "flavors-in",
+        "value": "opacity 0 → 1, translateY(26px) scale(0.86) → none, 0.9s ease-out",
+        "purpose": "Entrée de la boîte sur la scène des goûts."
+      },
+      {
+        "name": "menu-iris",
+        "value": "clip-path circle(0px → 160%) at burger, 0.75s ease-io",
+        "purpose": "Menu mobile."
+      },
+      {
+        "name": "nav-underline",
+        "value": "scaleX 0 → 1 depuis la gauche, 0.35s ease-out",
+        "purpose": "Liens de navigation."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "gels posés sans fondu, iris display none, révélations désactivées, pilules sans transition, scroll-behavior auto, rotation coupée",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "480px"
+      },
+      {
+        "name": "phone",
+        "value": "560px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "laptop",
+        "value": "1100px"
+      },
+      {
+        "name": "wrap",
+        "value": "1440px"
+      }
+    ],
+    "browserSurfaces": {
+      "selection": "background var(--jaune); color var(--nuit)",
+      "caret": "caret-color var(--jaune)",
+      "scrollbar": "scrollbar-color var(--violet) var(--nuit) ; webkit 10px, pouce 999px avec liseré 2px nuit",
+      "focusRing": "outline 3px solid var(--orange); outline-offset 3px; border-radius 4px (stepper : offset -3px)"
+    },
+    "accessibility": [
+      "Zones tactiles 44 px minimum ; commandes 52 à 60 px.",
+      "Texte nuit sur jaune et orange ; crème sur violet et nuit.",
+      "Mot-symbole SVG avec rôle img et aria-label quand il porte un titre, sinon aria-hidden ; h1 doublé d'un texte sr-only.",
+      "Lumières, iris et scènes de boîtes en aria-hidden ; compteur de collection en aria-live polite.",
+      "prefers-reduced-motion honoré partout ; contrôle d'âge inert sur le site tant qu'il est affiché.",
+      "Replis de polices à métriques ajustées (pas de saut de mise en page à l'arrivée des polices)."
+    ]
+  },
+  "components": [
+    {
+      "name": "Pilule primaire",
+      "kind": "button",
+      "refersTo": "pill",
+      "description": "Action principale d'une scène : jaune, texte nuit, lueur au survol.",
+      "html": "<a class=\"ds-pill\" href=\"#\">Découvrir les goûts <svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/></svg></a>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; justify-content: center; gap: 0.55em; min-height: 52px; padding: 0 1.45rem; border-radius: 999px; background: var(--jaune, #f8ff32); color: var(--nuit, #0b0a10); font-family: var(--f-text, 'Bricolage Grotesque Variable', Arial, sans-serif); font-weight: 650; font-size: 1rem; line-height: 1; white-space: nowrap; border: 1.5px solid transparent; text-decoration: none; cursor: pointer; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s; } .ds-pill:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(248,255,50,0.6); } .ds-pill:active { transform: translateY(0) scale(0.985); } .ds-pill:focus-visible { outline: 3px solid var(--orange, #ff5a1f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Pilule ghost",
+      "kind": "button",
+      "refersTo": "pill-ghost",
+      "description": "Action secondaire : transparente, bordure de la couleur du texte.",
+      "html": "<a class=\"ds-pill-ghost\" href=\"#\">Commander sur WhatsApp</a>",
+      "css": ".ds-pill-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 0.55em; min-height: 52px; padding: 0 1.45rem; border-radius: 999px; background: transparent; color: var(--creme, #f4efe6); font-family: var(--f-text, 'Bricolage Grotesque Variable', Arial, sans-serif); font-weight: 650; font-size: 1rem; line-height: 1; white-space: nowrap; border: 1.5px solid currentColor; text-decoration: none; cursor: pointer; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), background-color 0.25s; } .ds-pill-ghost:hover { transform: translateY(-1px); background: rgba(244,239,230,0.08); } .ds-pill-ghost:focus-visible { outline: 3px solid var(--orange, #ff5a1f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Sélecteur de goût",
+      "kind": "input",
+      "refersTo": "select",
+      "description": "Champ natif sur surface nuit relevée, bordure filet qui passe au jaune au survol.",
+      "html": "<label class=\"ds-select\"><span class=\"ds-select__label\">Changer de goût</span><span class=\"ds-select__box\"><select><option>VELO Freezing Peppermint</option><option>ZYN Black Cherry</option></select><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"/></svg></span></label>",
+      "css": ".ds-select { display: grid; gap: 8px; color: var(--creme, #f4efe6); font-family: var(--f-text, 'Bricolage Grotesque Variable', Arial, sans-serif); } .ds-select__label { font-stretch: 75%; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(244,239,230,0.72); } .ds-select__box { position: relative; display: block; } .ds-select select { width: 100%; min-height: 52px; padding: 0 44px 0 16px; border-radius: 14px; border: 1.5px solid rgba(244,239,230,0.18); background: var(--nuit-2, #14121c); color: inherit; font: inherit; font-weight: 600; appearance: none; cursor: pointer; transition: border-color 0.25s; } .ds-select select:hover { border-color: var(--jaune, #f8ff32); } .ds-select select:focus-visible { outline: 3px solid var(--orange, #ff5a1f); outline-offset: 3px; } .ds-select__box svg { position: absolute; right: 14px; top: 50%; translate: 0 -50%; pointer-events: none; }"
+    },
+    {
+      "name": "Stepper de quantité",
+      "kind": "input",
+      "refersTo": "stepper",
+      "description": "Pilule bordée, chiffre jaune en Black Han Sans, boutons jaunes au survol.",
+      "html": "<div class=\"ds-stepper\"><button type=\"button\" aria-label=\"Moins\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/></svg></button><input type=\"number\" value=\"1\" min=\"1\" aria-label=\"Quantité\"><button type=\"button\" aria-label=\"Plus\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14\"/><path d=\"M5 12h14\"/></svg></button></div>",
+      "css": ".ds-stepper { display: inline-grid; grid-template-columns: 56px minmax(96px, 1fr) 56px; align-items: stretch; border: 1.5px solid rgba(244,239,230,0.18); border-radius: 999px; overflow: hidden; width: min(100%, 300px); color: var(--creme, #f4efe6); } .ds-stepper button { display: grid; place-items: center; min-height: 60px; border: 0; background: none; color: inherit; cursor: pointer; transition: background-color 0.25s, color 0.25s; } .ds-stepper button:hover { background: var(--jaune, #f8ff32); color: var(--nuit, #0b0a10); } .ds-stepper input { text-align: center; background: transparent; border: 0; border-inline: 1.5px solid rgba(244,239,230,0.18); color: var(--jaune, #f8ff32); font-family: var(--f-logo, 'Black Han Sans', 'Arial Black', sans-serif); font-size: clamp(1.75rem, 1.2rem + 2.4vw, 3.25rem); line-height: 0.95; font-variant-numeric: tabular-nums; min-width: 0; appearance: textfield; -moz-appearance: textfield; } .ds-stepper input::-webkit-inner-spin-button, .ds-stepper input::-webkit-outer-spin-button { appearance: none; margin: 0; } .ds-stepper input:focus-visible { outline: 3px solid var(--orange, #ff5a1f); outline-offset: -3px; }"
+    },
+    {
+      "name": "Onglet de goût",
+      "kind": "chip",
+      "refersTo": "flavor-tab",
+      "description": "Bouton radio d'un goût : nom Shrikhand, méta en petit ; coché en jaune et décalé de 4 px.",
+      "html": "<div class=\"ds-tabs\" role=\"radiogroup\"><button type=\"button\" class=\"ds-tab\" role=\"radio\" aria-checked=\"false\"><span class=\"ds-tab__name\">Black Cherry</span><span class=\"ds-tab__meta\">ZYN Mini · 8 mg/g</span></button><button type=\"button\" class=\"ds-tab\" role=\"radio\" aria-checked=\"true\"><span class=\"ds-tab__name\">Freezing Peppermint</span><span class=\"ds-tab__meta\">VELO · 20 mg/g</span></button></div>",
+      "css": ".ds-tabs { display: grid; gap: 2px; padding-left: 14px; color: var(--creme, #f4efe6); font-family: var(--f-text, 'Bricolage Grotesque Variable', Arial, sans-serif); } .ds-tab { display: grid; gap: 1px; text-align: left; padding: 8px 12px 8px 14px; margin-left: -14px; border-radius: 14px; border: 0; background: none; color: inherit; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-tab:hover { background: rgba(244,239,230,0.07); } .ds-tab[aria-checked=\"true\"] { background: var(--jaune, #f8ff32); color: var(--nuit, #0b0a10); transform: translateX(4px); } .ds-tab:focus-visible { outline: 3px solid var(--orange, #ff5a1f); outline-offset: 3px; } .ds-tab__name { font-family: var(--f-display, Shrikhand, Impact, sans-serif); font-size: clamp(1.2rem, 1rem + 0.8vw, 1.55rem); line-height: 1.05; text-transform: uppercase; } .ds-tab__meta { font-size: 0.875rem; opacity: 0.75; }"
+    },
+    {
+      "name": "Carte de boîte (lineup)",
+      "kind": "card",
+      "refersTo": "annotation-tag",
+      "description": "Sans cadre : flaque de lumière du goût, marque en label, nom Shrikhand, prix en chiffres jaunes, pilule small.",
+      "html": "<article class=\"ds-lineup\" data-selected><div class=\"ds-lineup__pool\" aria-hidden=\"true\"></div><div class=\"ds-lineup__can\" aria-hidden=\"true\"></div><p class=\"ds-lineup__brand\">VELO</p><h3 class=\"ds-lineup__name\">Freezing Peppermint</h3><p class=\"ds-lineup__meta\"><svg class=\"ds-sparkle\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 0c.7 6.8 4.5 10.6 12 12-7.5 1.4-11.3 5.2-12 12-.7-6.8-4.5-10.6-12-12 7.5-1.4 11.3-5.2 12-12z\"/></svg> Menthe intense · 20 mg/g · Très fort</p><p class=\"ds-lineup__price\">24 000 FCFA</p><button type=\"button\" class=\"ds-lineup__pill\">Choisir ce goût</button></article>",
+      "css": ".ds-lineup { position: relative; width: 280px; display: grid; gap: 6px; justify-items: center; text-align: center; padding: 16px 12px 8px; color: var(--creme, #f4efe6); font-family: var(--f-text, 'Bricolage Grotesque Variable', Arial, sans-serif); } .ds-lineup__pool { position: absolute; left: 50%; top: 110px; width: 300px; height: 300px; translate: -50% -50%; border-radius: 50%; background: linear-gradient(140deg in oklch longer hue, #7928ff, #f8ff32); opacity: 0.22; -webkit-mask-image: radial-gradient(circle, #000 20%, transparent 68%); mask-image: radial-gradient(circle, #000 20%, transparent 68%); transition: opacity 0.6s; pointer-events: none; } .ds-lineup[data-selected] .ds-lineup__pool, .ds-lineup:hover .ds-lineup__pool { opacity: 0.62; } .ds-lineup__can { position: relative; width: 180px; height: 180px; margin-bottom: 12px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #3c6fd8, #1b2a5a 70%); filter: drop-shadow(0 30px 30px rgba(0,0,0,0.45)); transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); } .ds-lineup:hover .ds-lineup__can { transform: translateY(-6px); } .ds-lineup__brand, .ds-lineup__meta { font-stretch: 75%; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.2; color: rgba(244,239,230,0.72); margin: 0; } .ds-lineup__meta { display: flex; align-items: center; gap: 8px; } .ds-sparkle { width: 0.7rem; height: 0.7rem; fill: var(--jaune, #f8ff32); } .ds-lineup__name { margin: 0; font-family: var(--f-display, Shrikhand, Impact, sans-serif); font-weight: 400; font-size: clamp(1.35rem, 1.1rem + 0.9vw, 1.75rem); line-height: 1.05; text-transform: uppercase; } .ds-lineup__price { margin: 4px 0 0; font-family: var(--f-logo, 'Black Han Sans', 'Arial Black', sans-serif); font-size: clamp(1.5rem, 1.1rem + 1.1vw, 2.1rem); line-height: 0.95; color: var(--jaune, #f8ff32); font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-lineup__pill { margin-top: 8px; display: inline-flex; align-items: center; min-height: 46px; padding: 0 1.1rem; border-radius: 999px; border: 1.5px solid transparent; background: var(--jaune, #f8ff32); color: var(--nuit, #0b0a10); font: inherit; font-weight: 650; font-size: 0.9375rem; cursor: pointer; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s; } .ds-lineup__pill:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(248,255,50,0.6); } .ds-lineup__pill:focus-visible { outline: 3px solid var(--orange, #ff5a1f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Champ de matière (orange)",
+      "kind": "card",
+      "refersTo": "field-orange",
+      "description": "Bloc de couleur en aplat sur la salle crème, rayon 28 px, titre Shrikhand, échelle d'intensité.",
+      "html": "<section class=\"ds-field\"><h3 class=\"ds-field__title\">Du plus léger au plus fort</h3><p class=\"ds-field__note\">De 8 à 20 mg/g. Touche une ligne pour ouvrir le goût.</p><ol class=\"ds-ladder\"><li><button type=\"button\" class=\"ds-ladder__row\"><span class=\"ds-ladder__dose\">8</span><span class=\"ds-ladder__bar\"><i style=\"--w:40%\"></i></span><span class=\"ds-ladder__name\"><span class=\"ds-ladder__brand\">White Fox</span> Balanced</span></button></li><li><button type=\"button\" class=\"ds-ladder__row\"><span class=\"ds-ladder__dose\">20</span><span class=\"ds-ladder__bar\"><i style=\"--w:100%\"></i></span><span class=\"ds-ladder__name\"><span class=\"ds-ladder__brand\">VELO</span> Freezing Peppermint</span></button></li></ol></section>",
+      "css": ".ds-field { border-radius: 28px; padding: clamp(24px, 3.5vw, 48px); display: grid; gap: 16px; background: var(--orange, #ff5a1f); color: var(--nuit, #0b0a10); font-family: var(--f-text, 'Bricolage Grotesque Variable', Arial, sans-serif); } .ds-field__title { margin: 0; font-family: var(--f-display, Shrikhand, Impact, sans-serif); font-weight: 400; font-size: clamp(1.5rem, 1.15rem + 1.6vw, 2.5rem); line-height: 1; letter-spacing: 0.01em; text-transform: uppercase; } .ds-field__note { margin: 0; color: rgba(11,10,16,0.75); } .ds-ladder { list-style: none; margin: 8px 0 0; padding: 0; display: grid; } .ds-ladder li + li { border-top: 1px solid rgba(11,10,16,0.22); } .ds-ladder__row { width: 100%; display: grid; grid-template-columns: 3.2rem minmax(60px, 1fr) minmax(0, 2fr); align-items: center; gap: 14px; padding: 10px 0; text-align: left; color: inherit; border: 0; background: none; border-radius: 8px; font: inherit; cursor: pointer; transition: background-color 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-ladder__row:hover { background: rgba(11,10,16,0.08); transform: translateX(6px); } .ds-ladder__row:focus-visible { outline: 3px solid var(--nuit, #0b0a10); outline-offset: 3px; } .ds-ladder__dose { font-family: var(--f-logo, 'Black Han Sans', 'Arial Black', sans-serif); font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem); line-height: 0.95; font-variant-numeric: tabular-nums; } .ds-ladder__bar { height: 10px; border-radius: 999px; background: rgba(11,10,16,0.18); overflow: hidden; } .ds-ladder__bar i { display: block; height: 100%; width: var(--w); border-radius: inherit; background: var(--nuit, #0b0a10); } .ds-ladder__name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-weight: 600; line-height: 1.2; } .ds-ladder__brand { font-stretch: 75%; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(11,10,16,0.7); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "pill-small",
+      "description": "Barre fixe de 72 px : mot-symbole à gauche, liens soulignés d'une règle jaune au survol, pilule small à droite.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav__brand\" href=\"#\" aria-label=\"SNUS LBV\"><span class=\"ds-nav__mark\">SNUS LBV</span></a><a class=\"ds-nav__link\" href=\"#\">Collection</a><a class=\"ds-nav__link\" href=\"#\">Les goûts</a><a class=\"ds-nav__link\" href=\"#\">La marque</a><a class=\"ds-nav__cta\" href=\"#\">Commander</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 40px); height: 72px; padding: 0 24px; background: rgba(11,10,16,0.86); box-shadow: 0 1px 0 rgba(244,239,230,0.18); color: var(--creme, #f4efe6); font-family: var(--f-text, 'Bricolage Grotesque Variable', Arial, sans-serif); } .ds-nav__brand { display: flex; align-items: center; min-height: 44px; margin-right: auto; text-decoration: none; color: inherit; transition: color 0.3s; } .ds-nav__brand:hover { color: var(--jaune, #f8ff32); } .ds-nav__mark { font-family: var(--f-logo, 'Black Han Sans', 'Arial Black', sans-serif); font-size: 24px; line-height: 1; letter-spacing: 0.02em; } .ds-nav__link { position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; font-weight: 600; font-size: 0.95rem; color: inherit; text-decoration: none; } .ds-nav__link::after { content: ''; position: absolute; left: 0; right: 0; bottom: 4px; height: 2px; background: var(--jaune, #f8ff32); transform: scaleX(0); transform-origin: left; transition: transform 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-nav__link:hover::after, .ds-nav__link:focus-visible::after { transform: scaleX(1); } .ds-nav__link:focus-visible, .ds-nav__brand:focus-visible, .ds-nav__cta:focus-visible { outline: 3px solid var(--orange, #ff5a1f); outline-offset: 3px; border-radius: 4px; } .ds-nav__cta { display: inline-flex; align-items: center; min-height: 46px; padding: 0 1.1rem; border-radius: 999px; background: var(--jaune, #f8ff32); color: var(--nuit, #0b0a10); font-weight: 650; font-size: 0.9375rem; text-decoration: none; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s; } .ds-nav__cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(248,255,50,0.6); }"
+    },
+    {
+      "name": "Bulle d'aperçu du message",
+      "kind": "custom",
+      "refersTo": "preview-bubble",
+      "description": "Aperçu du message WhatsApp avant envoi : surface nuit relevée, coin inférieur gauche à 4 px.",
+      "html": "<pre class=\"ds-preview\">Bonjour SNUS LBV, je veux 1 boîte de snus Freezing Peppermint à livrer.\n\nMarque : VELO · 20 mg/g\nPrix unitaire : 24 000 FCFA\nTotal indicatif : 24 000 FCFA</pre>",
+      "css": ".ds-preview { margin: 0; padding: 16px 18px; border-radius: 18px 18px 18px 4px; background: var(--nuit-2, #14121c); border: 1px solid rgba(244,239,230,0.18); font: 500 0.9rem/1.5 var(--f-text, 'Bricolage Grotesque Variable', Arial, sans-serif); color: rgba(244,239,230,0.72); white-space: pre-wrap; overflow-wrap: anywhere; }"
+    },
+    {
+      "name": "Dock de commande (mobile)",
+      "kind": "custom",
+      "refersTo": "dock",
+      "description": "Pilule flottante en bas de l'écran sur smartphone : sélection courante et raccourci WhatsApp.",
+      "html": "<div class=\"ds-dock\"><span class=\"ds-dock__sel\">1 boîte · 24 000 FCFA<strong>VELO Freezing Peppermint</strong></span><a class=\"ds-dock__cta\" href=\"#\">WhatsApp</a></div>",
+      "css": ".ds-dock { display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 16px; border-radius: 999px; background: rgba(11,10,16,0.92); border: 1px solid rgba(244,239,230,0.18); box-shadow: 0 18px 40px -16px rgba(0,0,0,0.8); color: var(--creme, #f4efe6); font-family: var(--f-text, 'Bricolage Grotesque Variable', Arial, sans-serif); max-width: 390px; } .ds-dock__sel { flex: 1; min-width: 0; display: grid; line-height: 1.2; font-size: 0.8rem; color: rgba(244,239,230,0.72); } .ds-dock__sel strong { color: var(--creme, #f4efe6); font-weight: 700; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .ds-dock__cta { flex: none; display: inline-flex; align-items: center; min-height: 46px; padding: 0 1.1rem; border-radius: 999px; background: var(--jaune, #f8ff32); color: var(--nuit, #0b0a10); font-weight: 650; font-size: 0.9375rem; text-decoration: none; } .ds-dock__cta:hover { box-shadow: 0 10px 24px -12px rgba(248,255,50,0.6); } .ds-dock__cta:focus-visible { outline: 3px solid var(--orange, #ff5a1f); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La scène à trois projecteurs",
+    "overview": "SNUS LBV est une scène de nuit. Le fond est un noir bleuté profond, et trois projecteurs de couleur (orange, jaune, violet) le traversent en mode screen : leurs mélanges (ambre, cerise, givre) sont les seules couleurs intermédiaires du site. Rien n'est décoré : la lumière se déplace de scène en scène selon une conduite, s'éteint pour la « salle » crème de la marque, et chaque goût possède son propre couple de gels. Les boîtes sont des galets dessinés en canvas sous le projecteur, en rotation lente, avec une ombre portée douce ; elles sont le seul « visuel ».\n\nLa typographie porte deux références distinctes : le mot-symbole en tracés Black Han Sans (lettres condensées inclinées une à une, ombre douce, remplissage de lumière vivante dans le hero) et les titres Metal Mania en capitales, pleins nets, accompagnés d'une étincelle SVG à quatre branches. Bricolage Grotesque assure le texte courant et, resserrée (font-stretch: 75 %), les étiquettes de données (marque, dose, prix). Les chiffres importants (prix, mg/g, numéros d'étape, 18+) reprennent Black Han Sans.\n\nLa densité est généreuse : scènes hautes (72 à 140 px de respiration), grands titres, notes latérales entre parenthèses, et un seul bouton primaire jaune par scène. La page est mobile d'abord ; l'ordinateur en est l'extension.",
+    "keyCharacteristics": [
+      "Trois couleurs vives exactement, mélangées par chemins de teinte oklch ; nuit et crème comme seuls neutres.",
+      "Lumière mobile (gels en fondu 1,8 s par scène, dérive sinusoïdale permanente, sillage du pointeur).",
+      "Transitions d'iris circulaire pilotées par le défilement entre nuit et salle.",
+      "Boîtes 3D en canvas : rotation 30 à 38 s par tour, inertie au glissement, ralentissement à l'examen.",
+      "Pilules partout pour l'action ; champs très arrondis (28 px) pour les blocs de matière colorée.",
+      "Titres révélés par masque typographique (clip-path), le reste monte en fondu expo.out."
+    ],
+    "rules": [
+      {
+        "name": "The Three Gels Rule",
+        "body": "Toute couleur intermédiaire est un mélange de deux ou trois gels par linear-gradient(... in oklch shorter|longer hue, ...). Les quatre mélanges nommés sont --mix-ambre (orange → jaune, 160°, shorter), --mix-cerise (orange → violet, 160°, shorter), --mix-givre (violet → jaune, 170°, longer), --mix-trio (orange → jaune → violet, 150°, longer). Chaque goût du catalogue porte son propre couple (light.a, light.b, chemin, angle) et éclaire sa flaque (.lineup__pool) et sa scène. Aucune teinte hors de ces chemins.",
+        "section": "colors"
+      },
+      {
+        "name": "The Screen Light Rule",
+        "body": "Les gels sont des disques radiaux en mix-blend-mode: screen sur la nuit, jamais des aplats ; une couleur n'est posée en aplat que dans un champ (orange, violet), un iris ou une pilule.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lighted Choice Rule",
+        "body": "Le goût sélectionné prend la lumière (flaque à 0,62 d'opacité, voisins réduits à 1 − 0,25 × distance et mis à l'échelle 1 − 0,06 × distance) ; la sélection se dit par la lumière avant de se dire par un cadre.",
+        "section": "colors"
+      },
+      {
+        "name": "The Label Is Data Rule",
+        "body": "Une étiquette condensée en capitales ne porte que des données du catalogue (marque, dose, prix, référence, compteur) ; elle n'introduit jamais un titre.",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight 400 Rule",
+        "body": "Shrikhand et Black Han Sans n'existent qu'en 400 ; la hiérarchie se fait par la taille et la couleur, jamais par la graisse.",
+        "section": "typography"
+      },
+      {
+        "name": "The Light Before Shadow Rule",
+        "body": "Une surface s'élève par la lumière (flaque, gel, voile de nuit) ; l'ombre n'apparaît que sous un objet physique ou en réponse au survol.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do composer toute couleur intermédiaire par un dégradé oklch entre deux gels (shorter ou longer hue) et nommer le couple dans les données du goût.",
+      "Do réserver le jaune à l'action et au prix, et poser du texte nuit dessus ; crème sur violet et sur nuit uniquement.",
+      "Do placer un seul bouton primaire jaune par scène, les autres en ghost.",
+      "Do révéler les titres par masque clip-path (1.3 s expo.out) et le reste par montée en fondu (30 px, 1.15 s), une seule fois, avec IntersectionObserver en second déclencheur et filet de sécurité à 6 s.",
+      "Do garder les zones tactiles à 44 px minimum (liens de nav, burger, onglets mobiles, liens de pied de page) et 52 à 60 px pour les commandes.",
+      "Do honorer prefers-reduced-motion : gels posés sans fondu, iris masqués, révélations désactivées, pilules sans transformation, défilement natif.",
+      "Do sous-ensembler les polices et conserver les replis locaux à métriques ajustées pour que la mise en page ne bouge pas à l'arrivée des vraies polices.",
+      "Do afficher ce qui manque comme « à confirmer » ou « Prix sur WhatsApp », jamais une valeur inventée."
+    ],
+    "donts": [
+      "Don't introduire une quatrième couleur vive, un gris ou un blanc pur : seuls nuit, crème et leurs voiles rgba sont neutres.",
+      "Don't poser un gel en aplat sur la nuit : les gels sont des halos screen.",
+      "Don't utiliser Shrikhand ou Black Han Sans pour le texte courant, ni Bricolage pour un titre de scène.",
+      "Don't encadrer les boîtes dans des cartes bordées ou ombrées : la carte est la flaque de lumière.",
+      "Don't ajouter d'ombre dure, de bordure opaque ou de rayon inférieur à 4 px ; les filets restent translucides et 1.5 px.",
+      "Don't faire tourner une boîte en moins de 30 s par tour ni lui retirer l'inertie au glissement.",
+      "Don't faire d'une étiquette condensée un sur-titre : elle ne porte que des données."
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.impeccable/review/
+.impeccable/live/
+*.log
+.env
+.env.local
+dist-ssr/
+# captures de sites tiers et planches de travail, hors dépôt public
+references/nothin/
+references/polices/*.png
+references/polices/*.html
+references/site-actuel/_html/

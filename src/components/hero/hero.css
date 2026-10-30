@@ -1,0 +1,183 @@
+.hero {
+  min-height: 100svh;
+  padding-top: calc(var(--nav-h) + 16px);
+  padding-bottom: 32px;
+  display: flex;
+  color: var(--creme);
+}
+
+.hero__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.hero__title {
+  display: block;
+  margin-top: 2vh;
+}
+
+.hero__mark {
+  width: 100%;
+  height: auto;
+  color: var(--creme);
+}
+.hero .hero__mark--stack {
+  display: none;
+  gap: 2vw;
+}
+.wm--stack .wm__svg {
+  width: 100%;
+  height: auto;
+}
+.wm--stack .wm__svg--1 {
+  width: 72%;
+  justify-self: end;
+}
+
+.hero__body {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  align-items: end;
+  gap: 24px;
+}
+
+.hero__text {
+  display: grid;
+  gap: 22px;
+  justify-items: start;
+  padding-bottom: 8px;
+  max-width: 34rem;
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.hero__age {
+  color: var(--papier-doux);
+}
+/* sur smartphone, la mention 18+ tient dans le premier écran : sous la barre, au-dessus du mot-symbole */
+.hero__ageTop {
+  display: none;
+  color: var(--papier-doux);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero__stage {
+  position: relative;
+  height: clamp(300px, 44vh, 500px);
+}
+.hero__can {
+  position: absolute;
+  filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.45));
+}
+/* la boîte principale remonte dans le mot-symbole et chevauche le V */
+.hero__can--main {
+  right: 2%;
+  top: -42%;
+}
+.hero__can--left {
+  left: 4%;
+  bottom: 18%;
+  opacity: 0.92;
+}
+.hero__can--back {
+  right: 40%;
+  top: 8%;
+  opacity: 0.85;
+}
+
+@media (max-width: 1100px) {
+  .hero__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .hero__can--main {
+    right: 0;
+    top: -24%;
+  }
+  .hero__can--main .can {
+    --size: min(320px, 38vw) !important;
+  }
+  .hero__can--back {
+    right: 36%;
+    top: 16%;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-top: calc(var(--nav-h) + 4px);
+    padding-bottom: calc(24px + var(--safe-b));
+  }
+  .hero .hero__mark--line {
+    display: none;
+  }
+  .hero .hero__mark--stack {
+    display: grid;
+  }
+  .hero__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .hero__stage {
+    order: -1;
+    height: min(54vw, 280px);
+    margin: 1vh 0 2px;
+  }
+  .wm--stack {
+    gap: 1.2vw;
+  }
+  .wm--stack .wm__svg--0 {
+    width: 92%;
+  }
+  .wm--stack .wm__svg--1 {
+    width: 64%;
+  }
+  /* centrée sous le mot-symbole ; GSAP pilote transform, le centrage passe donc par la marge */
+  .hero__can--main {
+    right: auto;
+    top: auto;
+    left: 50%;
+    bottom: 0;
+    margin-left: calc(min(58vw, 290px) / -2);
+  }
+  .hero__can--main .can {
+    --size: min(58vw, 290px) !important;
+  }
+  .hero__can--left {
+    left: -4%;
+    bottom: 40%;
+    opacity: 0.6;
+  }
+  .hero__can--left .can {
+    --size: 110px !important;
+  }
+  .hero__can--back {
+    right: -6%;
+    top: 0;
+    opacity: 0.55;
+  }
+  .hero__can--back .can {
+    --size: 130px !important;
+  }
+  .hero__text {
+    gap: 14px;
+  }
+  .hero__ageTop {
+    display: block;
+    margin: 2px 0 -4px;
+  }
+  .hero__age {
+    font-size: 0.78rem;
+  }
+  .hero__actions {
+    width: 100%;
+  }
+  .hero__actions .pill {
+    flex: 1 1 auto;
+  }
+}

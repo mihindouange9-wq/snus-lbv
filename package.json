@@ -1,0 +1,53 @@
+{
+  "name": "snus-lbv",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5230",
+    "build": "tsc --noEmit && eslint . && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node tools/prerender.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 5231",
+    "typecheck": "tsc --noEmit",
+    "shots": "node tools/shoot.mjs http://127.0.0.1:5231 .impeccable/review/shots 1440,390",
+    "verify": "node tools/check.mjs http://127.0.0.1:5231",
+    "wordmark": "node tools/wordmark.mjs",
+    "fonts": "node tools/subset-font.mjs",
+    "assets": "node tools/brand-assets.mjs",
+    "fullpage": "node tools/fullpage.mjs http://127.0.0.1:5231",
+    "test:whatsapp": "node --experimental-strip-types tools/test-whatsapp.mjs",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.546.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/three": "^0.187.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^10.14.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "opentype.js": "^2.0.0",
+    "puppeteer-core": "^25.12.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^6.3.5",
+    "wawoff2": "^2.0.1"
+  },
+  "overrides": {
+    "rollup": "4.40.0",
+    "esbuild": "0.25.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

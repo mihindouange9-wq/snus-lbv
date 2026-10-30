@@ -1,0 +1,48 @@
+/* SNUS LBV — jetons. Trois couleurs vives, deux neutres de structure. */
+:root {
+  --nuit: #0b0a10;
+  --nuit-2: #14121c;
+  --creme: #f4efe6;
+  --creme-2: #e8e1d2;
+  --orange: #ff5a1f;
+  --jaune: #f8ff32;
+  --violet: #7928ff;
+
+  /* encre sur fond clair, papier sur fond sombre */
+  --encre: var(--nuit);
+  --encre-doux: rgba(11, 10, 16, 0.7);
+  --papier: var(--creme);
+  --papier-doux: rgba(244, 239, 230, 0.72);
+  --filet-sombre: rgba(244, 239, 230, 0.18);
+  --filet-clair: rgba(11, 10, 16, 0.16);
+
+  --f-display: "Metal Mania", "Titre Repli Impact", "Titre Repli Arial Black", "Titre Repli Roboto", sans-serif;
+  --f-names: "Shrikhand", "Nom Repli Impact", "Nom Repli Arial Black", "Nom Repli Roboto", sans-serif;
+  --f-text: "Bricolage Grotesque Variable", "Bricolage Repli Arial", "Bricolage Repli Roboto", sans-serif;
+  --f-logo: "Black Han Sans", "Logo Repli Arial Black", "Logo Repli Roboto", sans-serif;
+
+  --t-display: clamp(2.5rem, 1.4rem + 5.2vw, 6rem);
+  --t-h3: clamp(1.5rem, 1.15rem + 1.6vw, 2.5rem);
+  --t-lead: clamp(1.125rem, 1rem + 0.6vw, 1.4rem);
+  --t-body: 1.0625rem;
+  --t-small: 0.875rem;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --wrap: 1440px;
+  --nav-h: 72px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --shadow-can: 0 28px 48px -18px rgba(0, 0, 0, 0.7), 0 10px 18px -8px rgba(0, 0, 0, 0.5);
+
+  /* mélanges des trois gels (chemins de teinte en oklch) */
+  --mix-ambre: linear-gradient(160deg in oklch shorter hue, var(--orange), var(--jaune));
+  --mix-cerise: linear-gradient(160deg in oklch shorter hue, var(--orange), var(--violet));
+  --mix-givre: linear-gradient(170deg in oklch longer hue, var(--violet), var(--jaune));
+  --mix-trio: linear-gradient(150deg in oklch longer hue, var(--orange), var(--jaune), var(--violet));
+
+  /* position du pointeur, 0..1, alimentée par Lights */
+  --px: 0.5;
+  --py: 0.5;
+}
