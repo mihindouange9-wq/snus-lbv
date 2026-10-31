@@ -45,8 +45,9 @@ Outils : `tools/wordmark.mjs`, `tools/subset-font.mjs`, `tools/prerender.mjs`, `
 | Captures scène par scène | `npm run shots`, `tools/shoot.mjs` à 1920/1280/1024/768/430/375/320, pleine page 1440 et 390, contrôle d'âge, menu, rendu 3D (SwiftShader) | Inspectées : aucun chevauchement, aucune boîte tronquée, prix et goûts lisibles |
 | Détecteur d'anti-patterns impeccable | `impeccable detect` | 0 constat |
 | Revue de finition indépendante (sous-agent) | impeccable-finish-reviewer | Premier verdict « fix » (8 correctifs) ; première passe : 6 résolus, 2 partiels, 3 régressions ; second lot (Metal Mania, mention 18+ en tête du hero mobile, dock masqué sur la bande, trait d'union insécable et hauteur de nom fixe, angle de repos 0) ; seconde passe : tout résolu, disposition **ship** (sur les éléments notés) |
-| Lighthouse 12 mobile (Moto G Power simulé, 4G lente) | `npx lighthouse@12` | Performance 71 à 82 selon la passe (FCP 2,2–2,3 s, LCP 3,1–3,6 s simulé, TBT 280–550 ms, CLS 0) ; Accessibilité 100, Bonnes pratiques 100, SEO 100 |
-| Lighthouse 12 ordinateur | idem `--preset=desktop` | Performance 99, Accessibilité 100, Bonnes pratiques 100, SEO 100 (LCP 0,8 s, TBT 40 ms, CLS 0) |
+| Lighthouse 12 mobile (Moto G Power simulé, 4G lente), 3D chargée au premier geste (version intermédiaire) | `npx lighthouse@12` | Performance 71 à 82 selon la passe (FCP 2,2–2,3 s, LCP 3,1–3,6 s simulé, TBT 280–550 ms, CLS 0) ; Accessibilité 100, Bonnes pratiques 100, SEO 100 |
+| Lighthouse 12 ordinateur, même version | idem `--preset=desktop` | Performance 99, Accessibilité 100, Bonnes pratiques 100, SEO 100 (LCP 0,8 s, TBT 40 ms, CLS 0) |
+| Lighthouse 12, **version livrée** (3D démarrée dès le chargement, à la demande du client) | idem | Mobile : performance 45 (TBT 8,2 s, FCP 2,7 s, LCP 4,3 s, CLS 0), accessibilité 100, bonnes pratiques 100, SEO 100 · Ordinateur : performance 69 (TBT 1,1 s), 100 / 100 / 100. Ces chiffres sont obtenus en headless **sans GPU** (WebGL logiciel SwiftShader) : la compilation des shaders et l'environnement PMREM y bloquent le fil principal pendant plusieurs secondes, alors qu'un GPU de téléphone les traite en quelques centaines de millisecondes. Les scores « 3D au premier geste » restent la référence pour le réseau et le JavaScript ; la version livrée privilégie l'apparition immédiate des boîtes |
 | Trace Chrome throttlée (CPU × 4, 4G lente) | script CDP | FCP ≈ 2,0 s, LCP ≈ 2,3 s en conditions réelles simulées ; la mise en page initiale et l'arrivée des polices restent les coûts principaux |
 
 Les scores Lighthouse sont mesurés sans WebGL matériel (headless, rendu logiciel) : l'initialisation 3D y pèse bien plus que sur un téléphone avec GPU, où la compilation des shaders coûte une centaine de millisecondes.
@@ -65,7 +66,7 @@ Les scores Lighthouse sont mesurés sans WebGL matériel (headless, rendu logici
 - Prix, disponibilités, frais et délais de livraison, moyens de paiement : à confirmer par SNUS LBV (`src/data/products.ts`, `src/data/site.ts`).
 - Mentions légales de l'entreprise (raison sociale, RCCM, NIF) et réseaux sociaux.
 - Cadre légal gabonais (loi 006/2013 et décrets 2016 sur la publicité du tabac et des produits dérivés, sachets de nicotine cités) : validation juridique avant publication.
-- Performance mobile : 76–82 ; les leviers restants sont des visuels plus légers, moins de texte dans le premier rendu, ou Preact à la place de React (non fait pour rester sur la pile demandée).
+- Performance mobile : 71–82 sans la 3D au chargement, 45 avec (mesure logicielle, voir plus haut). Pour un score Lighthouse élevé *et* la 3D immédiate, il faudrait mesurer sur appareil réel ; sinon rebasculer `engage.ts` sur le premier geste (une ligne). Autres leviers : visuels plus légers, Preact à la place de React (non fait pour rester sur la pile demandée).
 
 ## 6. Checklist finale
 

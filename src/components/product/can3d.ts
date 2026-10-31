@@ -182,8 +182,21 @@ export async function createCan(opts: { product: Product; band: HTMLCanvasElemen
   const bodyColor = new THREE.Color("#ffffff");
   const px = opts.px;
 
+  // compilation des shaders hors du fil principal quand le GPU le permet (KHR_parallel_shader_compile) :
+  // la première image 3D n'arrive qu'une fois les programmes prêts, sans à-coup
+  let compiled = false;
+  s.lid.map = s.lid.map ?? null;
+  s.renderer
+    .compileAsync(s.scene, s.camera)
+    .then(() => {
+      compiled = true;
+    })
+    .catch(() => {
+      compiled = true;
+    });
+
   return {
-    ready: () => lidTex !== null,
+    ready: () => lidTex !== null && compiled,
     frame(theta, tilt) {
       if (disposed || !lidTex) return;
       const { renderer, scene, camera, group } = s;
