@@ -52,7 +52,9 @@ Limite : les seuls visuels disponibles sont des vues de dessus de 300 × 300 px 
 
 ## Déployer
 
-Site statique : `npm run build` puis servir `dist/`. Sur Render, `render.yaml` décrit un site statique gratuit ; renseigner `VITE_SITE_URL` (adresse publique sans barre finale) pour les balises canonical, Open Graph, `robots.txt` et `sitemap.xml`.
+**En ligne : https://snus-lbv.onrender.com** (site statique Render gratuit, service `snus-lbv`, dépôt public https://github.com/mihindouange9-wq/snus-lbv, branche `main`, build `npm ci && npm run build`, publication de `dist/`, `VITE_SITE_URL=https://snus-lbv.onrender.com`).
+
+Après une modification : `git push` puis `RENDER_API_KEY=rnd_xxx node tools/render-deploy.mjs` (ou `RENDER_KEY_FILE=chemin`) : l'outil retrouve le service, redéploie et attend « live ». Un push seul ne redéploie pas toujours (application GitHub de Render non installée), et un nouveau déploiement purge aussi le cache du CDN : juste après la première mise en ligne, deux fichiers avaient répondu 404 depuis le cache jusqu'au déploiement suivant. La clé API ne doit jamais être écrite dans le dépôt. `render.yaml` reflète la même configuration.
 
 ## Structure
 

@@ -1,5 +1,7 @@
 # SNUS LBV — rapport d'audit et de perfectionnement (31 octobre 2026)
 
+Site en ligne : https://snus-lbv.onrender.com · dépôt public : https://github.com/mihindouange9-wq/snus-lbv
+
 Travail réalisé sur le projet existant `geek/snus-lbv`, sans reconstruction : audit, corrections dans le code, tests, mesures. Tout ce qui est coché a été exécuté sur ce poste (Windows 11, Node 22.23, Chrome installé piloté en headless) ; ce qui n'a pas pu l'être est listé en fin de rapport.
 
 ## 1. Problèmes détectés et corrections
@@ -42,8 +44,8 @@ Outils : `tools/wordmark.mjs`, `tools/subset-font.mjs`, `tools/prerender.mjs`, `
 | Tap réel sur un goût en émulation mobile (coordonnées fraîches) | script dédié | OK (le clic Puppeteer par coordonnées est fragile pendant un défilement doux ; les tests passent par `element.click()`, le tap réel a été vérifié à part) |
 | Captures scène par scène | `npm run shots`, `tools/shoot.mjs` à 1920/1280/1024/768/430/375/320, pleine page 1440 et 390, contrôle d'âge, menu, rendu 3D (SwiftShader) | Inspectées : aucun chevauchement, aucune boîte tronquée, prix et goûts lisibles |
 | Détecteur d'anti-patterns impeccable | `impeccable detect` | 0 constat |
-| Revue de finition indépendante (sous-agent) | impeccable-finish-reviewer | Premier verdict « fix » (8 correctifs) ; passe de verdict : 6 résolus, 2 partiels (lames des titres, mention 18+ mobile) et 3 régressions (dock sur « Choisir ce goût », césures au trait d'union, boîte à l'envers à l'arrêt), tous retravaillés dans un second lot (Metal Mania, mention 18+ en tête du hero mobile, dock masqué sur la bande, trait d'union insécable et hauteur de nom fixe, angle de repos 0) |
-| Lighthouse 12 mobile (Moto G Power simulé, 4G lente) | `npx lighthouse@12` | Performance 76 à 82 selon la passe (FCP 2,2 s, LCP 3,1–3,5 s simulé, TBT 280–530 ms, CLS 0) ; Accessibilité 100, Bonnes pratiques 100, SEO 100 |
+| Revue de finition indépendante (sous-agent) | impeccable-finish-reviewer | Premier verdict « fix » (8 correctifs) ; première passe : 6 résolus, 2 partiels, 3 régressions ; second lot (Metal Mania, mention 18+ en tête du hero mobile, dock masqué sur la bande, trait d'union insécable et hauteur de nom fixe, angle de repos 0) ; seconde passe : tout résolu, disposition **ship** (sur les éléments notés) |
+| Lighthouse 12 mobile (Moto G Power simulé, 4G lente) | `npx lighthouse@12` | Performance 71 à 82 selon la passe (FCP 2,2–2,3 s, LCP 3,1–3,6 s simulé, TBT 280–550 ms, CLS 0) ; Accessibilité 100, Bonnes pratiques 100, SEO 100 |
 | Lighthouse 12 ordinateur | idem `--preset=desktop` | Performance 99, Accessibilité 100, Bonnes pratiques 100, SEO 100 (LCP 0,8 s, TBT 40 ms, CLS 0) |
 | Trace Chrome throttlée (CPU × 4, 4G lente) | script CDP | FCP ≈ 2,0 s, LCP ≈ 2,3 s en conditions réelles simulées ; la mise en page initiale et l'arrivée des polices restent les coûts principaux |
 
