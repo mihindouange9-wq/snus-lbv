@@ -19,7 +19,11 @@ const fonts = ["bricolage-grotesque-latin-wdth-normal", "metal-mania-subset", "s
   .map((n) => assets.find((f) => f.startsWith(n) && f.endsWith(".woff2")))
   .filter(Boolean)
   .map((f) => `    <link rel="preload" as="font" type="font/woff2" href="/assets/${f}" crossorigin />`);
-fs.writeFileSync(file, page.replace('<div id="root"></div>', `<div id="root">${html}</div>`).replace("</head>", `${fonts.join("\n")}\n  </head>`));
-console.log(`préchargement : ${fonts.length} polices`);
+// le moteur 3D arrive avec le reste : les boîtes passent en WebGL dès le chargement
+const modules = assets
+  .filter((f) => /^(three|can3d)-.*\.js$/.test(f))
+  .map((f) => `    <link rel="modulepreload" href="/assets/${f}" />`);
+fs.writeFileSync(file, page.replace('<div id="root"></div>', `<div id="root">${html}</div>`).replace("</head>", `${fonts.join("\n")}\n${modules.join("\n")}\n  </head>`));
+console.log(`préchargement : ${fonts.length} polices, ${modules.length} modules 3D`);
 fs.rmSync(ssrDir, { recursive: true, force: true });
 console.log(`pré-rendu : ${Math.round(html.length / 1024)} Ko de HTML injectés dans dist/index.html`);

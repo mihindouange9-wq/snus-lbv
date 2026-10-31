@@ -23,7 +23,7 @@ Travail réalisé sur le projet existant `geek/snus-lbv`, sans reconstruction : 
 | 13 | Mineure | Points d'intensité lisibles comme des étoiles d'avis | — | `Flavors.tsx` : étiquette « intensité » + `role="img"` |
 | 14 | Mineure | Couvercle agrandi au-delà de sa résolution | Visuels 300 px | Boîtes plafonnées à 320 px CSS ; halo et lignes de rappel portent l'échelle |
 | 15 | Performance | Trois polices complètes (jusqu'à 185 Ko), remise en page à chaque arrivée | — | Sous-ensembles, préchargement injecté au build (`tools/prerender.mjs`), repli métrique |
-| 16 | Performance | Three.js chargé au démarrage : TBT simulé 6,6 s mobile | Compilation de shaders + PMREM pendant l'hydratation | `engage.ts` : import au premier geste ou 14 s après `load` ; environnement PMREM léger au lieu de RoomEnvironment |
+| 16 | Performance | Three.js chargé au démarrage : TBT simulé 6,6 s mobile | Compilation de shaders + PMREM pendant l'hydratation | `engage.ts` : d'abord import au premier geste ; à la demande du client (la 3D tardait), import dès `load` + instant libre, module en `modulepreload` ; environnement PMREM léger au lieu de RoomEnvironment. Coût accepté : TBT mobile plus élevé (voir mesures) |
 | 17 | Accessibilité | Focus perdu après « Commander ce goût » | La révélation redémarrait sur l'élément focalisé | `motion.ts` : la révélation de l'ancêtre est terminée (`progress(1)`) avant le focus |
 | 18 | Qualité | Pas de lint | — | ESLint (TypeScript, règles React Hooks) dans `npm run build` ; 6 problèmes corrigés (setState dans effet, ref en rendu, espace irrégulière, blocs vides) |
 
@@ -49,7 +49,7 @@ Outils : `tools/wordmark.mjs`, `tools/subset-font.mjs`, `tools/prerender.mjs`, `
 | Lighthouse 12 ordinateur | idem `--preset=desktop` | Performance 99, Accessibilité 100, Bonnes pratiques 100, SEO 100 (LCP 0,8 s, TBT 40 ms, CLS 0) |
 | Trace Chrome throttlée (CPU × 4, 4G lente) | script CDP | FCP ≈ 2,0 s, LCP ≈ 2,3 s en conditions réelles simulées ; la mise en page initiale et l'arrivée des polices restent les coûts principaux |
 
-Les scores Lighthouse sont mesurés sans WebGL matériel (headless) : la 3D ne se charge qu'au premier geste, donc après la fenêtre mesurée ; sur un téléphone réel, l'initialisation 3D (compilation de shaders) coûte une centaine de millisecondes au premier défilement.
+Les scores Lighthouse sont mesurés sans WebGL matériel (headless, rendu logiciel) : l'initialisation 3D y pèse bien plus que sur un téléphone avec GPU, où la compilation des shaders coûte une centaine de millisecondes.
 
 ## 4. Tests non exécutés et raisons
 

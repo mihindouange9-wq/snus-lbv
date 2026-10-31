@@ -29,7 +29,7 @@ npm run fonts           # régénère les sous-ensembles de polices (src/assets/
 npm run assets          # régénère public/og.jpg et public/apple-touch-icon.png
 ```
 
-`npm run verify` couvre : contrôle d'âge (adulte, mineur, mémorisation), langue, polices, hiérarchie des titres, alt, libellés, ancres, gels et conduites lumière, boîtes de la collection, rendu 3D (WebGL, module chargé au premier geste, boîte dessinée), sélection depuis la collection, clavier (flèches, Début), lignes de rappel, commande (défilement, focus, lien wa.me, message exact, quantité, changement de goût, secours), échelle d'intensité, pied de page, largeurs 320 · 360 · 375 · 390 (densité 2) · 414 · 430 · 844 × 390 (paysage) · 768 · 1024 · 1280 · 1440 · 1920 (débordement, texte coupé, zones tactiles ≥ 40 px, console), menu mobile (iris, Échap), bande à glissement, raccourci de commande mobile, mouvement réduit. Les outils pilotent le Chrome installé (`C:/Program Files/Google/Chrome/Application/chrome.exe`, variable `CHROME` pour un autre chemin). Lighthouse : `npx lighthouse@12 http://127.0.0.1:5231/ --chrome-flags="--headless=new"` (ou `--preset=desktop`).
+`npm run verify` couvre : contrôle d'âge (adulte, mineur, mémorisation), langue, polices, hiérarchie des titres, alt, libellés, ancres, gels et conduites lumière, boîtes de la collection, rendu 3D (WebGL, module chargé dès le chargement, boîte dessinée), sélection depuis la collection, clavier (flèches, Début), lignes de rappel, commande (défilement, focus, lien wa.me, message exact, quantité, changement de goût, secours), échelle d'intensité, pied de page, largeurs 320 · 360 · 375 · 390 (densité 2) · 414 · 430 · 844 × 390 (paysage) · 768 · 1024 · 1280 · 1440 · 1920 (débordement, texte coupé, zones tactiles ≥ 40 px, console), menu mobile (iris, Échap), bande à glissement, raccourci de commande mobile, mouvement réduit. Les outils pilotent le Chrome installé (`C:/Program Files/Google/Chrome/Application/chrome.exe`, variable `CHROME` pour un autre chemin). Lighthouse : `npx lighthouse@12 http://127.0.0.1:5231/ --chrome-flags="--headless=new"` (ou `--preset=desktop`).
 
 ## Modifier le catalogue, le numéro, les textes
 
@@ -46,7 +46,7 @@ Un prix à `null` masque le prix et le total dans le message (« Prix sur WhatsA
 
 ## Boîtes 3D
 
-`Can.tsx` dessine d'abord la boîte en canvas 2D (couvercle réel incliné, flanc à bandeau, reflets des gels), visible dès la première peinture. Au premier geste du visiteur (ou dix secondes après le chargement), `can3d.ts` est importé : un seul moteur WebGL partagé rend une géométrie réelle (cylindre, arêtes arrondies, couvercle recessé) avec le visuel du couvercle, le bandeau du flanc, un vernis sur le couvercle, un éclairage de studio (clé chaude, remplissage violet, contour orange) et des réflexions d'environnement, puis copie l'image dans le canvas de chaque boîte. Rotation lente continue, inertie au glissement (souris et doigt) sur les boîtes du hero et des goûts, ralentissement au survol, angle qui varie légèrement avec le défilement, pause hors écran. Sans WebGL, sur un appareil modeste (≤ 2 Go, ≤ 2 cœurs, économie de données) ou en mouvement réduit, le rendu 2D reste en place.
+`Can.tsx` dessine d'abord la boîte en canvas 2D (couvercle réel incliné, flanc à bandeau, reflets des gels), visible dès la première peinture. Dès le chargement (module préchargé, démarrage au premier instant libre du navigateur, ou plus tôt au premier geste), `can3d.ts` est importé : un seul moteur WebGL partagé rend une géométrie réelle (cylindre, arêtes arrondies, couvercle recessé) avec le visuel du couvercle, le bandeau du flanc, un vernis sur le couvercle, un éclairage de studio (clé chaude, remplissage violet, contour orange) et des réflexions d'environnement, puis copie l'image dans le canvas de chaque boîte. Rotation lente continue, inertie au glissement (souris et doigt) sur les boîtes du hero et des goûts, ralentissement au survol, angle qui varie légèrement avec le défilement, pause hors écran. Sans WebGL, sur un appareil modeste (≤ 2 Go, ≤ 2 cœurs, économie de données) ou en mouvement réduit, le rendu 2D reste en place.
 
 Limite : les seuls visuels disponibles sont des vues de dessus de 300 × 300 px ; le flanc est reconstruit (couleurs approchées du visuel réel). Des photos HD et une vue de côté par boîte améliorerraient nettement le réalisme.
 
@@ -70,7 +70,7 @@ src/
     animations/  Lights (trois gels), IrisWipe (transition par disque)
     navigation/  barre, menu mobile à iris
     hero/        mot-symbole monumental à matière vivante, trois boîtes
-    product/     Can (2D), can3d (WebGL), engage (chargement au premier geste)
+    product/     Can (2D), can3d (WebGL), engage (démarrage de la 3D dès le chargement)
     collection/  bande des neuf boîtes à glissement natif, compteur et flèches
     flavors/     scène du goût : lumière, boîte, lignes de rappel, fiche
     brand/       mot-symbole, étincelle, section « La marque » et échelle d'intensité

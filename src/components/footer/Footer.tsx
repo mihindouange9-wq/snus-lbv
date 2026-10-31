@@ -52,6 +52,20 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="footer__partner">
+          <p className="label footer__partnerLabel">Site conçu et réalisé en collaboration avec</p>
+          <div className="footer__lockup">
+            <Wordmark className="footer__lockupMark" title="SNUS LBV" />
+            <svg className="footer__x" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" strokeWidth="4" strokeLinecap="round" fill="none" />
+            </svg>
+            <a href="https://methode-aura.onrender.com" target="_blank" rel="noopener noreferrer" className="footer__partnerLink" aria-label="MÉTHODE AURA, studio de marque (nouvel onglet)">
+              <img src="/partenaires/methode-aura.png" alt="MÉTHODE AURA" width={800} height={246} loading="lazy" decoding="async" />
+            </a>
+          </div>
+          <p className="footer__partnerNote">MÉTHODE AURA, studio de marque à Libreville · Du concept à l'impact.</p>
+        </div>
+
         <div className="footer__bottom">
           <p>
             © {year} {SITE.name}
@@ -60,7 +74,6 @@ export default function Footer() {
             {SITE.legal.nif ? ` · NIF ${SITE.legal.nif}` : ""}
           </p>
           <p>
-            Site conçu et réalisé par{" "}
             <a href="https://methode-aura.onrender.com" target="_blank" rel="noopener noreferrer">
               MÉTHODE AURA
             </a>

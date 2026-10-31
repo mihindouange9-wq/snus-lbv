@@ -68,7 +68,7 @@ async function fresh(w, h, { touch = false, reduced = false, adult = true, dpr =
   await page.evaluate(() => window.scrollBy(0, 1));
   await sleep(6000);
   const r3 = await page.evaluate(() => ({ webgl: (() => { const c = document.createElement("canvas"); return !!(c.getContext("webgl2") || c.getContext("webgl")); })(), chunk: performance.getEntriesByType("resource").some((r) => /three-/.test(r.name)), drawn: document.querySelector(".hero__can--main .can")?.hasAttribute("data-drawn") }));
-  ok("rendu 3D : WebGL disponible, module Three.js chargé à la demande, boîte du hero dessinée", r3.webgl && r3.chunk && r3.drawn, JSON.stringify(r3));
+  ok("rendu 3D : WebGL disponible, module Three.js chargé dès le chargement, boîte du hero dessinée", r3.webgl && r3.chunk && r3.drawn, JSON.stringify(r3));
   ok("l'en-tête se détache au défilement", await page.evaluate(async () => { window.scrollTo(0, 400); await new Promise((r) => setTimeout(r, 500)); return document.querySelector(".nav").classList.contains("nav--compact"); }));
 
   // sélection depuis la collection → scène des goûts
