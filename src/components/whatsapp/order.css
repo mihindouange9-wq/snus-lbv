@@ -25,6 +25,7 @@
 
 .order__step {
   display: grid;
+  grid-template-columns: minmax(0, 1fr); /* un contenu insécable ne doit pas élargir l'étape au-delà de sa colonne */
   gap: 18px;
   align-content: start;
   padding-top: 18px;
@@ -53,8 +54,8 @@
 }
 
 .order__pick {
-  display: grid;
-  grid-template-columns: auto minmax(200px, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   align-items: center;
 }
@@ -62,6 +63,8 @@
   filter: drop-shadow(0 16px 16px rgba(0, 0, 0, 0.45));
 }
 .order__select {
+  /* à côté de la boîte tant que le nom du goût tient, sinon dessous sur toute la largeur de la colonne */
+  flex: 1 1 230px;
   display: grid;
   gap: 8px;
   min-width: 0;
@@ -212,10 +215,11 @@
     gap: 28px;
   }
   .order__pick {
-    grid-template-columns: minmax(0, 1fr);
-    justify-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
   .order__select {
+    flex: none;
     width: 100%;
   }
   .stepper {
@@ -223,5 +227,13 @@
   }
   .order__fallback .pill {
     flex: 1 1 auto;
+  }
+}
+
+/* très petits écrans (320 px) : le bouton principal tient dans la colonne sans la pousser */
+@media (max-width: 360px) {
+  .order__cta {
+    padding: 0 1rem;
+    font-size: 1rem;
   }
 }

@@ -138,10 +138,15 @@
 }
 .lineup__meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 2px 8px;
   font-size: var(--t-small);
   color: var(--papier-doux);
+}
+.lineup__meta span {
+  white-space: nowrap; /* la ligne se replie entre le goût et la dose, jamais au milieu */
 }
 .lineup__meta .sparkle {
   color: var(--jaune);

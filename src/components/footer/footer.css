@@ -97,6 +97,9 @@
   line-height: 1.1;
 }
 .footer__tel {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   text-decoration: underline;
   text-underline-offset: 0.2em;
   width: fit-content;

@@ -138,6 +138,26 @@
   }
 }
 
+/* téléphone en paysage : les quatre liens et la mention tiennent sous la barre, le reste défile */
+@media (max-width: 760px) and (max-height: 480px) {
+  .menu {
+    justify-content: flex-start;
+    padding-top: calc(var(--nav-h) + 8px);
+    padding-bottom: calc(16px + var(--safe-b));
+    overflow-y: auto;
+  }
+  .menu__links {
+    gap: 2px;
+  }
+  .menu__links a {
+    font-size: var(--t-h3);
+    padding: 4px 0;
+  }
+  .menu__foot {
+    margin-top: 14px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .menu {
     transition: none;
