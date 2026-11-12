@@ -15,7 +15,7 @@ const page = fs.readFileSync(file, "utf8");
 if (!page.includes('<div id="root"></div>')) throw new Error("racine #root introuvable dans dist/index.html");
 // préchargement des trois polices latines : elles arrivent ensemble, une seule remise en page
 const assets = fs.readdirSync(path.join(root, "dist/assets"));
-const fonts = ["bricolage-grotesque-latin-wdth-normal", "metal-mania-subset", "shrikhand-subset", "black-han-sans-subset"]
+const fonts = ["bricolage-grotesque-latin-wdth-normal", "black-han-sans-subset"]
   .map((n) => assets.find((f) => f.startsWith(n) && f.endsWith(".woff2")))
   .filter(Boolean)
   .map((f) => `    <link rel="preload" as="font" type="font/woff2" href="/assets/${f}" crossorigin />`);

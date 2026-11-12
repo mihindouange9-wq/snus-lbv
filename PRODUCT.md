@@ -41,11 +41,11 @@ Revendeur libreville-ois de pouches de nicotine de marques internationales (ZYN,
 ## Brand Commitments
 
 - Nom : SNUS LBV (LBV = Libreville).
-- Références visuelles contraignantes : `references/logo snus lbv.jpg` (mot « WAUW! » : lettres grasses condensées, chaque lettre inclinée, crème sur noir) pour le logo ; `references/typographie site.jpg` (« SPICY DOLLZ » : lettrage pointu à lames, étoiles à quatre branches, noir sur rose) pour le caractère des titres.
-- Palette imposée : exactement trois couleurs vives (départ orange #FF5A1F, jaune #F8FF32, violet #7928FF, ajustables) + noir profond et blanc cassé comme neutres de structure uniquement.
-- Référence d'exécution : https://www.noth.in/ (niveau d'interaction, compositions typographiques, alternance de blocs, étiquettes entre parenthèses), à ne pas copier.
+- Charte graphique : `DESIGN.md` (version 2, 12 nov. 2026) et planche `docs/charte-graphique.html`. Elle remplace les références « WAUW! » et « SPICY DOLLZ » et les polices Metal Mania et Shrikhand.
+- Palette imposée par le client le 12 nov. 2026, quatre couleurs exactement : Linen #FFEDE3, Tangelo #FB4E01, Chocolate Brown #49261D, Botticelli #CBE7F7. Elle remplace les trois couleurs vives (orange, jaune, violet).
+- Référence d'exécution donnée par le client le 12 nov. 2026 : https://www.osply.co/ (mot-symbole pleine largeur, bandeau fin, roue verticale de visuels, ligne de repères), à adapter sans copier. Demande associée : effets au maximum sur téléphone, site fluide, public de jeunes adultes (18 à 35 ans).
 - Ton : fun, sobre, urbain contemporain ; pas de codes enfantins, pas de slogans vides, pas de fausses preuves sociales.
-- Second prompt client (31 oct. 2026, « perfectionnement ») : le mot-symbole du hero doit porter une « matière lumineuse en mouvement », des mélanges de violet, d'orange et de jaune qui circulent à l'intérieur des lettres (texte en dégradé animé explicitement demandé, lisibilité et contours nets exigés, repli statique en mouvement réduit) ; boîtes en 3D réaliste avec éclairage de studio ; message WhatsApp commençant exactement par « Bonjour SNUS LBV, je veux [QUANTITÉ] boîte(s) de snus [NOM DU GOÛT] à livrer. ».
+- Message WhatsApp : il commence exactement par « Bonjour SNUS LBV, je veux [QUANTITÉ] boîte(s) de snus [NOM DU GOÛT] à livrer. ». Les demandes du 31 oct. 2026 sur les dégradés animés et les boîtes en 3D sont remplacées par la charte version 2.
 
 ## Evidence on Hand
 

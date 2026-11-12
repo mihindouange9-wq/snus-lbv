@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNUS LBV — Charte graphique</title>
+<style>
+@font-face{font-family:"Black Han Sans";src:url("../src/assets/fonts/black-han-sans-subset.woff2") format("woff2");}
+@font-face{font-family:"Bricolage Grotesque Variable";font-weight:200 800;font-stretch:75% 100%;src:url("../node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wdth-normal.woff2") format("woff2-variations");}
+:root{--linen:#FFEDE3;--tangelo:#FB4E01;--chocolat:#49261D;--botticelli:#CBE7F7;--doux:rgba(255,237,227,.74);--filet:rgba(255,237,227,.22);--g:clamp(14px,4vw,48px);}
+*{box-sizing:border-box}
+body{margin:0;background:var(--chocolat);color:var(--linen);font:450 17px/1.5 "Bricolage Grotesque Variable",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:var(--tangelo);color:var(--chocolat)}
+h1,h2,h3,p,ul{margin:0;padding:0}ul{list-style:none}
+.wm{display:block;width:100%;aspect-ratio:1300/215;overflow:visible}
+.wm text{font-family:"Black Han Sans",sans-serif;font-size:253px;fill:currentColor}
+.d{font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.88}
+.l{font-size:13px;font-stretch:75%;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.2}
+.n{font-family:"Black Han Sans",sans-serif;line-height:1}
+header{padding:var(--g) var(--g) 0}
+.bar{display:flex;justify-content:space-between;background:var(--linen);color:var(--chocolat);padding:6px 8px;margin-top:8px;font-weight:600;font-size:15px}
+section{padding:clamp(48px,9vw,110px) var(--g) 0}
+section>h2{font-size:clamp(2.4rem,8vw,5rem);margin-bottom:28px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.sw{border-radius:28px;padding:18px;min-height:240px;display:grid;align-content:space-between}
+.sw b{font-size:1.7rem}
+.sw p{font-size:15px;line-height:1.35}
+.rule{border-top:1px solid var(--filet);padding:16px 0;display:grid;gap:6px;grid-template-columns:minmax(0,13rem) minmax(0,1fr)}
+.rule p:first-child{color:var(--doux)}
+@media(max-width:640px){.rule{grid-template-columns:1fr}}
+.pair{border-radius:20px;padding:16px;display:grid;gap:6px;min-height:130px;align-content:space-between}
+.pair strong{font-size:1.5rem}
+.no{box-shadow:inset 0 0 0 2px var(--filet);position:relative}
+.no::after{content:"Interdit";position:absolute;right:14px;top:14px;font:700 13px/1 "Bricolage Grotesque Variable";letter-spacing:.08em;text-transform:uppercase;color:var(--linen);background:var(--chocolat);padding:5px 8px;border-radius:99px}
+.btn{display:inline-flex;align-items:center;min-height:56px;padding:0 26px;border-radius:999px;background:var(--tangelo);color:var(--chocolat);font-size:19px;font-stretch:75%;font-weight:800;text-transform:uppercase}
+.type{display:grid;gap:26px}
+.bars{display:flex;gap:6px;height:120px;align-items:end}
+.bars i{display:block;border-radius:10px 10px 0 0}
+footer{padding:clamp(48px,9vw,110px) var(--g) var(--g);color:var(--tangelo)}
+footer p{color:var(--doux);font-size:13px;margin-top:12px}
+</style>
+</head>
+<body>
+<header>
+  <img src="../public/logo/snus-lbv-logo-linen.svg" alt="SNUS LBV" style="display:block;width:min(100%,520px);height:auto">
+  <div class="bar"><span>Charte graphique</span><span>Version 2 · novembre 2026</span></div>
+</header>
+
+<section>
+  <h2 class="d">1. L'idée</h2>
+  <p class="d" style="font-size:clamp(1.8rem,5vw,3.4rem);max-width:22ch">Une affiche, pas une boutique. Un logo compact, neuf boîtes sur une roue, une seule couleur pour agir.</p>
+</section>
+
+<section>
+  <h2 class="d">2. Couleurs</h2>
+  <div class="grid">
+    <div class="sw" style="background:var(--chocolat);box-shadow:inset 0 0 0 1.5px var(--filet)"><div><b class="d">Chocolate Brown</b><p class="l">#49261D · 60 %</p></div><p>Fond principal. Texte sur les fonds clairs.</p></div>
+    <div class="sw" style="background:var(--linen);color:var(--chocolat)"><div><b class="d">Linen</b><p class="l">#FFEDE3 · 25 %</p></div><p>Texte sur Chocolat, fonds clairs, bandeau.</p></div>
+    <div class="sw" style="background:var(--tangelo);color:var(--chocolat)"><div><b class="d">Tangelo</b><p class="l" style="font-size:19px;font-weight:800;letter-spacing:.02em">#FB4E01 · 10 %</p></div><p style="font-size:24px;font-weight:700;line-height:1.15">Action et signal. Jamais de petit texte.</p></div>
+    <div class="sw" style="background:var(--botticelli);color:var(--chocolat)"><div><b class="d">Botticelli</b><p class="l">#CBE7F7 · 5 %</p></div><p>Fraîcheur : menthes, carte de commande.</p></div>
+  </div>
+  <div class="bars" style="margin-top:14px" aria-hidden="true"><i style="flex:60;height:100%;background:var(--chocolat);box-shadow:inset 0 0 0 1.5px var(--filet)"></i><i style="flex:25;height:100%;background:var(--linen)"></i><i style="flex:10;height:100%;background:var(--tangelo)"></i><i style="flex:5;height:100%;background:var(--botticelli)"></i></div>
+</section>
+
+<section>
+  <h2 class="d">3. Associations</h2>
+  <div class="grid">
+    <div class="pair" style="background:var(--chocolat);box-shadow:inset 0 0 0 1.5px var(--filet)"><strong class="d">Linen sur Chocolat</strong><p class="l">11,7:1 · tout texte</p></div>
+    <div class="pair" style="background:var(--linen);color:var(--chocolat)"><strong class="d">Chocolat sur Linen</strong><p class="l">11,7:1 · tout texte</p></div>
+    <div class="pair" style="background:var(--botticelli);color:var(--chocolat)"><strong class="d">Chocolat sur Botticelli</strong><p class="l">10,3:1 · tout texte</p></div>
+    <div class="pair" style="background:var(--tangelo);color:var(--chocolat)"><strong class="d">Chocolat sur Tangelo</strong><p style="font-size:19px;font-weight:800;font-stretch:75%;text-transform:uppercase">3,9:1 · 19 px gras et plus</p></div>
+    <div class="pair" style="background:var(--chocolat);color:var(--tangelo);box-shadow:inset 0 0 0 1.5px var(--filet)"><strong class="d">Tangelo sur Chocolat</strong><p style="font-size:19px;font-weight:800;font-stretch:75%;text-transform:uppercase">3,9:1 · grand texte, pictogrammes</p></div>
+    <div class="pair no" style="background:var(--tangelo);color:var(--linen)"><strong class="d">Linen sur Tangelo</strong><p style="font-size:19px;font-weight:800;font-stretch:75%;text-transform:uppercase;color:var(--chocolat)">3,0:1</p></div>
+    <div class="pair no" style="background:var(--botticelli);color:var(--tangelo)"><strong class="d">Tangelo sur Botticelli</strong><p class="l" style="color:var(--chocolat)">2,6:1</p></div>
+  </div>
+  <div style="margin-top:28px">
+    <div class="rule"><p class="l">Teintes</p><p>Quatre couleurs, aucune autre. Les seules dérivations sont ces couleurs en transparence (filets à 20 %, texte secondaire à 75 %).</p></div>
+    <div class="rule"><p class="l">Interdits</p><p>Dégradés, texte en dégradé, ombres colorées, gris, noir pur, blanc pur. Tangelo en fond de page entière, sauf un panneau par page.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="d">4. Typographie</h2>
+  <div class="type">
+    <div><p class="l" style="color:var(--doux)">Mot-symbole et chiffres · Black Han Sans</p><p class="n" style="font-size:clamp(3rem,12vw,8rem)">SNUS LBV 20</p></div>
+    <div><p class="l" style="color:var(--doux)">Affichage · Bricolage Grotesque, largeur 75 %, graisse 800, capitales, −0,03 em</p><p class="d" style="font-size:clamp(2.6rem,10vw,6rem)">Freezing Peppermint</p></div>
+    <div><p class="l" style="color:var(--doux)">Texte · Bricolage Grotesque, graisse 450, 17 px, interligne 1,5</p><p style="max-width:60ch">Menthe poivrée glaciale. Le plus fort du catalogue. Frais et délais de livraison confirmés par le vendeur sur WhatsApp.</p></div>
+    <div><p class="l" style="color:var(--doux)">Étiquette · largeur 75 %, graisse 700, capitales, 13 px, 0,08 em</p><p class="l">VELO · Menthe intense · 20 mg/g</p></div>
+  </div>
+  <div style="margin-top:28px">
+    <div class="rule"><p class="l">Familles</p><p>Deux, jamais une troisième. Pas de surtitre au-dessus d'un titre. Aucun texte sous 13 px.</p></div>
+    <div class="rule"><p class="l">Nombres</p><p>Prix, dose et quantité en Black Han Sans à chasse fixe. Espace insécable dans les prix et avant « : ».</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="d">5. Logo</h2>
+  <div class="grid" style="margin-bottom:28px">
+    <div class="pair" style="background:var(--chocolat);box-shadow:inset 0 0 0 1.5px var(--filet);place-content:center;min-height:200px"><img src="../public/logo/snus-lbv-logo-linen.svg" alt="Logo sur fond sombre" style="width:100%"></div>
+    <div class="pair" style="background:var(--linen);place-content:center;min-height:200px"><img src="../public/logo/snus-lbv-logo-chocolat.svg" alt="Logo sur fond clair" style="width:100%"></div>
+    <div class="pair" style="background:var(--botticelli);place-content:center;justify-items:center;min-height:200px"><img src="../public/favicon.svg" alt="Sachet seul" style="width:96px"></div>
+  </div>
+  <div class="rule"><p class="l">Idée</p><p>Un seul motif, le sachet. Un sachet Tangelo glissé dans le U, là où il se place sous la lèvre, et « LBV » dans une capsule en forme de sachet.</p></div>
+  <div class="rule"><p class="l">Couleurs</p><p>Lettres Linen sur fond sombre, Chocolat sur fond clair. Sachet et capsule toujours Tangelo, « LBV » toujours Chocolat.</p></div>
+  <div class="rule"><p class="l">Matière vivante</p><p>Sur le site, des nuances Botticelli et Tangelo se déplacent lentement dans les lettres de SNUS et le sachet s'enfonce doucement dans le U. Fixe en mouvement réduit et à l'impression.</p></div>
+  <div class="rule"><p class="l">Taille</p><p>Compact, en haut à gauche. Largeur minimale 96 px ; en dessous, le sachet seul avec le S.</p></div>
+  <div class="rule"><p class="l">Protection</p><p>La hauteur du sachet du U tout autour. Jamais sur une photo, jamais étiré, incliné ou recoloré.</p></div>
+</section>
+
+<section>
+  <h2 class="d">6. Formes</h2>
+  <div class="rule"><p class="l">Rayons</p><p>Deux seulement : pilule pour les boutons et la barre de commande, panneau de 22 à 40 px pour les surfaces.</p></div>
+  <div class="rule"><p class="l">Bouton d'action</p><p><span class="btn">Commander ce goût</span></p></div>
+  <div class="rule"><p class="l">Toucher</p><p>Zones tactiles de 44 px au minimum, boutons d'action de 56 px. Marge de page de 12 px sur téléphone.</p></div>
+</section>
+
+<section>
+  <h2 class="d">7. Mouvement</h2>
+  <div class="rule"><p class="l">Idée</p><p>Le mouvement raconte la roue : neuf boîtes qui roulent du plus léger au plus fort, aimantées sur chaque goût.</p></div>
+  <div class="rule"><p class="l">Accompagnement</p><p>Rideau circulaire à l'entrée, bandeau qui s'incline avec la vitesse, phrase remplie mot à mot, quatre panneaux empilés, boîte qui tourne et total qui roule à la commande, mot-symbole qui monte en pied de page.</p></div>
+  <div class="rule"><p class="l">Technique</p><p>Seuls transform, opacity et clip-path sont animés. Sortie exponentielle. 180 ms au toucher, 420 ms pour un état, 900 ms pour une entrée. Un seul écran épinglé.</p></div>
+  <div class="rule"><p class="l">Mouvement réduit</p><p>La roue se tourne avec ses deux boutons, les panneaux se suivent sans s'empiler, rien n'est masqué.</p></div>
+</section>
+
+<section>
+  <h2 class="d">8. Ton</h2>
+  <div class="rule"><p class="l">Voix</p><p>Tutoiement, phrases courtes, faits vérifiables : dose, prix, ville.</p></div>
+  <div class="rule"><p class="l">Jamais</p><p>Promesse de santé, fausse preuve sociale, slogan, code enfantin. Le site s'adresse aux adultes de 18 ans et plus.</p></div>
+</section>
+
+<footer>
+  <img src="../public/logo/snus-lbv-logo-linen.svg" alt="" style="display:block;width:min(100%,360px);height:auto">
+  <p>Règles complètes : DESIGN.md. Jetons : src/styles/tokens.css.</p>
+</footer>
+</body>
+</html>
